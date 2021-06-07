@@ -12,11 +12,17 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-// make a connection
+// make a connections
 mongoose.connect('mongodb://localhost:27017/local', {
     useUnifiedTopology: true,
     useNewUrlParser: true
-});
+}).then(() => {
+        console.log("ok DB");
+    },
+    err => { 
+        console.log('error: '+ err)
+    }
+);
 
 const Task = mongoose.model('task', {
     date: String,

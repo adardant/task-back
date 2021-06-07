@@ -5,7 +5,6 @@ describe('Check routes', () => {
         done()
     })
 
-
     afterAll(done => {
         // Closing the DB connection allows Jest to exit successfully.
         server.close();
