@@ -15,7 +15,9 @@ app.use(cors(corsOptions));
 // make a connections
 mongoose.connect('mongodb://localhost:27017/local', {
     useUnifiedTopology: true,
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    serverSelectionTimeoutMS: 5000, 
+    socketTimeoutMS: 5000
 }).then(() => {
         console.log("ok DB");
     },
